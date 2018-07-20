@@ -82,6 +82,12 @@ export default class WaveForm extends Component{
 
 
     }
+
+constructor() {
+      super()
+      this._makeid = this._makeid.bind(this);
+      this._onPress = this._onPress.bind(this);
+    }
     componentWillMount() {
         DeviceEventEmitter.addListener('OGOnPress', (e) => this._onPress(e));
         const componentID = this._makeid();
